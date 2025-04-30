@@ -8,21 +8,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieManager {
-    private List<Movie> movies;
-    private final String movieFile = "movies.txt";
+    private ArrayList<Movie> movies;
 
     public MovieManager() {
-        movies = new ArrayList<>();
-        readMovies(); 
+        this.movies = new ArrayList<>();
+        readMovies();
     }
 
-    public void addMovie(String title, String year, String genre) {
+    public boolean addMovie(String title, String year, String genre) {
+        for (int i = 0; i < movies.size(); i++) {
+            if (movies.get(i).getTitle().equalsIgnoreCase(title)) {
+                return false;
+            }
+        }
         movies.add(new Movie(title, year, genre));
-        saveMovies(); 
+
+        if (saveMovies()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean removeMovie(String title) {
-        boolean removed; 
+        boolean removed = false;
         for (int i = 0; i < movies.size(); i++) {
             if (movies.get(i).getTitle().equalsIgnoreCase(title)) {
                 movies.remove(i);  
@@ -33,7 +42,7 @@ public class MovieManager {
         if (removed) {
             saveMovies();
         }
-        return removed; 
+        return removed;
         
     }
 
@@ -50,16 +59,63 @@ public class MovieManager {
         return movies;
     }
 
-    public boolean editMovie () {
-        //to do
+    public boolean editMovie(String title, String year, String genre) {
+        for (int i = 0; i < movies.size(); i++) {
+            if (movies.get(i).getTitle().equalsIgnoreCase(title)) {
+                if (title != null) {
+                    movies.get(i).setTitle(title);
+                }
+                if (year != null) {
+                    movies.get(i).setYear(year);
+                }
+                if (genre != null) {
+                    movies.get(i).setGenre(genre);
+                }
+                saveMovies();
+                return true;
+            }
+        }
+        return false;
     }
     
     private void readMovies() {
-        //to do
+        try {
+            FileReader moviesFile = new FileReader("./movies.txt");
+            BufferedReader br = new BufferedReader(moviesFile);
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] userData = line.split(",");
+                String title = userData[0];
+                String year = userData[1];
+                String genre = userData[2];
+                
+                Movie movie;
+                movie = new Movie(title, year, genre);
+                
+                this.movies.add(movie);
+            }
+            br.close();
+
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
-    private void saveMovies() {
-        //to do
+    private boolean saveMovies() {
+        try {
+            FileWriter moviesFile = new FileWriter("./movies.txt");
+            BufferedWriter bw = new BufferedWriter(moviesFile);
+            for (int i = 0; i < movies.size(); i++) {
+                Movie movie = movies.get(i);
+                bw.write(movie.getTitle() + "," + movie.getYear() + "," + movie.getGenre());
+                bw.newLine();
+            }
+            bw.close();
+            return true;
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+        return false;
     }
 
 }

@@ -47,6 +47,16 @@ public class Movie{
         return this.genre;
     }
 
+    public void setTitle(String title){
+        this.title = title;
+    }
+    public void setYear(String year){
+        this.year = year;
+    }
+    public void setGenre(String genre){
+        this.genre = genre;
+    }
+
     public String toString(){
         return "Title: " + this.title + ", Year: " + this.year + ", Genre: " + this.genre;
     }

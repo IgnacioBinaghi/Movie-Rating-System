@@ -42,6 +42,9 @@ public class User {
     public String getPassword() {
         return this.password;
     }
+    public boolean isAdmin() {
+        return this.isAdmin;
+    }
     public ArrayList<String> getWatchlist() {
         return this.watchlist;
     }

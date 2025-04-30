@@ -1,0 +1,49 @@
+The Godfather,1972,Crime
+Pulp Fiction,1994,Crime
+The Dark Knight,2008,Action
+Fight Club,1999,Drama
+Forrest Gump,1994,Drama
+The Matrix,1999,Sci-Fi
+Goodfellas,1990,Crime
+The Shawshank Redemption,1994,Drama
+Interstellar,2014,Sci-Fi
+Gladiator,2000,Action
+The Silence of the Lambs,1991,Thriller
+Titanic,1997,Romance
+Jurassic Park,1993,Adventure
+Back to the Future,1985,Sci-Fi
+The Lion King,1994,Animation
+Star Wars,1977,Sci-Fi
+E.T.,1982,Sci-Fi
+Casablanca,1942,Romance
+Psycho,1960,Horror
+The Shining,1980,Horror
+Avatar,2009,Sci-Fi
+Schindler's List,1993,Drama
+The Avengers,2012,Action
+The Terminator,1984,Sci-Fi
+Jaws,1975,Thriller
+Braveheart,1995,Historical
+The Exorcist,1973,Horror
+Rocky,1976,Sports
+Gone with the Wind,1939,Romance
+The Wizard of Oz,1939,Fantasy
+Blade Runner,1982,Sci-Fi
+Die Hard,1988,Action
+The Big Lebowski,1998,Comedy
+Taxi Driver,1976,Crime
+Alien,1979,Sci-Fi
+The Departed,2006,Crime
+Whiplash,2014,Drama
+Parasite,2019,Thriller
+La La Land,2016,Musical
+The Social Network,2010,Drama
+Her,2013,Romance
+Eternal Sunshine of the Spotless Mind,2004,Sci-Fi
+The Grand Budapest Hotel,2014,Comedy
+No Country for Old Men,2007,Crime
+The Revenant,2015,Adventure
+Mad Max: Fury Road,2015,Action
+Get Out,2017,Horror
+Black Panther,2018,Superhero
+The Shape of Water,2017,Fantasy
