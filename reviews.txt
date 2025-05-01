@@ -1,0 +1,118 @@
+john,inception,5,one of nolan's best mind-bending films
+alice,the dark knight,5,heath ledger's joker is legendary
+mike,interstellar,4,amazing visuals but confusing plot
+sara,the matrix,5,revolutionary sci-fi action
+david,forrest gump,4,heartwarming but overly long
+emma,pulp fiction,5,tarantino's masterpiece
+ryan,the godfather,5,flawless cinema
+lisa,fight club,4,great twist but problematic messaging
+kevin,gladiator,5,epic historical drama
+julia,the shawshank redemption,5,perfect story of hope
+steve,jurassic park,4,iconic adventure with great effects
+natalie,back to the future,5,timeless fun
+peter,the silence of the lambs,5,hopkins is terrifying
+olivia,goodfellas,4,scorsese's gritty mob classic
+daniel,the lion king,5,disney's animated peak
+sophia,aladdin,4,robin williams steals the show
+chris,et,3,charming but dated
+mia,jaws,5,still terrifying after decades
+jason,star wars,5,changed cinema forever
+hannah,indiana jones,4,perfect adventure romp
+john,casablanca,5,old hollywood magic
+alice,gone with the wind,3,problematic but epic
+mike,the terminator,4,arnold at his best
+sara,predator,3,cheesy but fun
+david,beauty and the beast,5,disney animation perfected
+emma,frozen,4,annoying songs but kids love it
+ryan,the avengers,4,superhero team-up done right
+lisa,black panther,5,cultural milestone
+kevin,get out,5,horror masterpiece
+julia,hereditary,4,deeply unsettling
+steve,the social network,4,sorkin's razor-sharp writing
+natalie,the wolf of wall street,3,excessive but entertaining
+peter,harry potter 1,5,magical introduction
+olivia,twilight,1,terrible in every way
+daniel,the empire strikes back,5,best star wars film
+sophia,rogue one,4,great standalone story
+chris,the notebook,3,guilty pleasure
+mia,la la land,5,modern musical classic
+jason,the big lebowski,5,cult comedy gold
+hannah,anchorman,4,will ferrell's best
+john,mean girls,4,sharp teen comedy
+alice,clueless,5,90s time capsule
+mike,die hard,5,best christmas movie
+sara,speed,4,non-stop tension
+david,the princess bride,5,charming fairy tale
+emma,toy story,5,pixar's perfect debut
+ryan,up,4,heartbreaking opening
+lisa,ratatouille,5,underrated pixar gem
+kevin,the incredibles,4,great superhero family
+julia,parasite,5,flawless dark comedy
+steve,oldboy,5,brutal and brilliant
+natalie,spirited away,5,ghibli masterpiece
+peter,my neighbor totoro,5,wholesome magic
+olivia,princess mononoke,4,epic environmental fable
+daniel,grave of the fireflies,5,devastating anime
+sophia,akira,4,visually stunning cyberpunk
+chris,the shining,5,kubrick's horror genius
+mia,the exorcist,4,still shocking today
+jason,alien,5,perfect sci-fi horror
+hannah,blade runner,4,philosophical and gorgeous
+john,2001 a space odyssey,5,sci-fi milestone
+alice,drive,4,stylish and violent
+mike,nightcrawler,5,gyllenhaal is terrifying
+sara,whiplash,4,intense and thrilling
+david,the grand budapest hotel,5,anderson's colorful best
+emma,fargo,4,quirky crime tale
+ryan,no country for old men,5,coen brothers perfection
+lisa,the revenant,4,brutal survival story
+kevin,birdman,5,innovative filmmaking
+julia,12 angry men,5,timeless courtroom drama
+steve,schindler's list,5,devastating holocaust film
+natalie,life is beautiful,4,heartbreaking but hopeful
+peter,amelie,5,whimsical french charm
+olivia,cinema paradiso,5,love letter to movies
+daniel,the seventh seal,4,philosophical classic
+sophia,psycho,5,hitchcock's best
+chris,vertigo,4,slow but mesmerizing
+mia,rear window,5,perfect suspense
+jason,citizen kane,5,greatest film ever
+hannah,casino,4,scorsese's underrated mob film
+john,scarface,3,overrated but iconic
+alice,heat,5,best heist film ever
+mike,the departed,4,great remake
+sara,good will hunting,5,affecting drama
+david,dead poets society,4,inspiring but cheesy
+emma,the truman show,5,prescient and brilliant
+ryan,eternal sunshine of the spotless mind,5,sci-fi romance done right
+lisa,her,4,unique love story
+kevin,lost in translation,5,poetic and quiet
+julia,before sunrise,5,perfect romance
+steve,requiem for a dream,4,hard to watch but important
+natalie,donnie darko,4,cult mind-bender
+peter,the usual suspects,5,best twist ending
+olivia,se7en,5,dark and unforgettable
+daniel,zodiac,4,underrated fincher
+sophia,the sixth sense,5,shyamalan's best
+chris,unbreakable,4,smart superhero take
+mia,signs,3,flawed but fun
+jason,the village,4,underrated thriller
+hannah,knives out,5,modern whodunit classic
+john,clue,3,silly but fun
+alice,murder on the orient express,4,classy mystery
+bob,The Matrix,5,Masterpiece
+bob,The Matrix,4,Still great
+bob,The Matrix,3,OK
+bob,The Matrix,5,Masterpiece
+bob,The Matrix,4,Still great
+bob,The Matrix,5,Masterpiece
+bob,The Matrix,4,Still great
+bob,The Matrix,3,OK
+bob,The Matrix,5,Masterpiece
+bob,The Matrix,4,Still great
+bob,The Matrix,3,OK
+bob,The Matrix,5,Masterpiece
+bob,The Matrix,4,Still great
+bob,The Matrix,3,OK
+bob,The Matrix,5,Masterpiece
+bob,The Matrix,4,Still great

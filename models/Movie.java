@@ -24,19 +24,6 @@ public class Movie{
         this.notes.add(note);
     }
 
-    public double getAverageRating(){
-        if (this.ratings.size() == 0){
-            return 0.0;
-        }
-
-        double sum = 0.0;
-        for (int i = 0; i < this.ratings.size(); i++){
-            sum += this.ratings.get(i);
-        }
-        return sum / this.ratings.size();
-    }
-
-
     public String getTitle(){
         return this.title;
     }
@@ -55,10 +42,6 @@ public class Movie{
     }
     public void setGenre(String genre){
         this.genre = genre;
-    }
-
-    public String toString(){
-        return "Title: " + this.title + ", Year: " + this.year + ", Genre: " + this.genre;
     }
 
 }
