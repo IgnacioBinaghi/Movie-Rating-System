@@ -13,6 +13,16 @@ public class UserManager {
         readUsers();
     }
 
+    public User authenticate(String username, String password) {
+        for (User user : users) {
+            if (user.getUsername().equalsIgnoreCase(username) &&
+                user.getPassword().equals(password)) {
+                return user; 
+            }
+        }
+        return null;
+    }
+
 
     public boolean registerUser(String username, String password, boolean isAdmin){
         for (int i = 0; i < users.size(); i++) {

@@ -1,8 +1,14 @@
 package guis;
 
+import javax.swing.JOptionPane;
+
+import managers.UserManager;
+import models.User;
+
 public class LoginGUI extends javax.swing.JFrame {
 
     private boolean admin;
+    UserManager userManager = new UserManager();
 
     public LoginGUI(boolean admin) {
         this.admin = admin;
@@ -96,13 +102,51 @@ public class LoginGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void RegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void RegisterBtnActionPerformed(java.awt.event.ActionEvent evt) {   
         // TODO add your handling code here:
+        String username = jTextField2.getText().trim();
+        String password = jTextField1.getText().trim();
+        boolean success = userManager.registerUser(username, password, this.admin);
+        if (success) {
+            JOptionPane.showMessageDialog(this, "Registration successful!");
+            if (this.admin) {
+                //new AdminDashboardGUI(user).setVisible(true); 
+            }
+            else {
+                 //new UserDashboardGUI(user).setVisible(true);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Username already exists.");
+        }
+
     }                                           
 
     private void LoginBtnActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-    }                                        
+        String username = jTextField2.getText().trim();
+        String password = jTextField1.getText().trim();
+
+        User user = userManager.authenticate(username, password);
+        if (this.admin) { //attempting to log in as admin
+            if (user == null || !user.isAdmin()) { 
+                JOptionPane.showMessageDialog(this, "Invalid credentials.");
+            }     
+            else {
+                //new AdminDashboardGUI(user).setVisible(true); need to implement
+                this.dispose();
+            }
+        }
+        else { //attempting to log in as user
+            if (user == null || user.isAdmin()) {
+                JOptionPane.showMessageDialog(this, "Invalid credentials.");
+            } else {
+                //new UserDashboardGUI(user).setVisible(true); need to implement
+                this.dispose();
+            }
+        }
+              
+
+    }                        
 
     /**
      * @param args the command line arguments
