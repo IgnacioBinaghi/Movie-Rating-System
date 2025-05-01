@@ -7,6 +7,7 @@ public class LoginGUI extends javax.swing.JFrame {
     public LoginGUI(boolean admin) {
         this.admin = admin;
         initComponents();
+        setTitle(admin ? "Admin Login" : "User Login");
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          

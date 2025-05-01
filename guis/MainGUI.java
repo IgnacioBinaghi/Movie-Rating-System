@@ -11,8 +11,8 @@ public class MainGUI extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        UserBtn = new javax.swing.JButton();
         AdminBtn = new javax.swing.JButton();
+        UserBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -23,17 +23,17 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Proceed as:");
 
-        UserBtn.setText("Admin");
-        UserBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserBtnActionPerformed(evt);
-            }
-        });
-
-        AdminBtn.setText("User");
+        AdminBtn.setText("Admin");
         AdminBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AdminBtnActionPerformed(evt);
+            }
+        });
+
+        UserBtn.setText("User");
+        UserBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserBtnActionPerformed(evt);
             }
         });
 
@@ -50,8 +50,8 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(199, 199, 199)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AdminBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                    .addComponent(UserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(UserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                    .addComponent(AdminBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(194, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -62,26 +62,26 @@ public class MainGUI extends javax.swing.JFrame {
                 .addGap(70, 70, 70)
                 .addComponent(jLabel4)
                 .addGap(26, 26, 26)
-                .addComponent(AdminBtn)
-                .addGap(18, 18, 18)
                 .addComponent(UserBtn)
+                .addGap(18, 18, 18)
+                .addComponent(AdminBtn)
                 .addContainerGap(134, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>                        
 
-    private void UserBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        // TODO add your handling code here:
-        new LoginGUI(false).setVisible(true);  //user login/register
-        this.dispose();
-    }                                       
-
     private void AdminBtnActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-        new LoginGUI(true).setVisible(true);  //admin login/register
+        new LoginGUI(true).setVisible(true);  //admin 
         this.dispose();
     }                                        
+
+    private void UserBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        new LoginGUI(false).setVisible(true);  //user 
+        this.dispose();
+    }                                       
 
     /**
      * @param args the command line arguments
