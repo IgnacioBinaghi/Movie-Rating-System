@@ -1,49 +1,101 @@
-The Godfather,1972,Crime
-Pulp Fiction,1994,Crime
-The Dark Knight,2008,Action
-Fight Club,1999,Drama
-Forrest Gump,1994,Drama
+The Godfather,1972,Crime  
+Pulp Fiction,1994,Crime  
+The Dark Knight,2008,Action  
+Fight Club,1999,Drama  
+Forrest Gump,1994,Drama  
 The Matrix,1999,Sci-Fi
-Goodfellas,1990,Crime
-The Shawshank Redemption,1994,Drama
-Interstellar,2014,Sci-Fi
-Gladiator,2000,Action
-The Silence of the Lambs,1991,Thriller
-Titanic,1997,Romance
-Jurassic Park,1993,Adventure
-Back to the Future,1985,Sci-Fi
-The Lion King,1994,Animation
-Star Wars,1977,Sci-Fi
-E.T.,1982,Sci-Fi
-Casablanca,1942,Romance
-Psycho,1960,Horror
-The Shining,1980,Horror
-Avatar,2009,Sci-Fi
-Schindler's List,1993,Drama
-The Avengers,2012,Action
-The Terminator,1984,Sci-Fi
-Jaws,1975,Thriller
-Braveheart,1995,Historical
-The Exorcist,1973,Horror
-Rocky,1976,Sports
-Gone with the Wind,1939,Romance
-The Wizard of Oz,1939,Fantasy
-Blade Runner,1982,Sci-Fi
-Die Hard,1988,Action
-The Big Lebowski,1998,Comedy
-Taxi Driver,1976,Crime
-Alien,1979,Sci-Fi
-The Departed,2006,Crime
-Whiplash,2014,Drama
-Parasite,2019,Thriller
-La La Land,2016,Musical
-The Social Network,2010,Drama
-Her,2013,Romance
-Eternal Sunshine of the Spotless Mind,2004,Sci-Fi
-The Grand Budapest Hotel,2014,Comedy
-No Country for Old Men,2007,Crime
-The Revenant,2015,Adventure
-Mad Max: Fury Road,2015,Action
-Get Out,2017,Horror
-Black Panther,2018,Superhero
-The Shape of Water,2017,Fantasy
+Goodfellas,1990,Crime  
+The Shawshank Redemption,1994,Drama  
+Interstellar,2014,Sci-Fi  
+Gladiator,2000,Action  
+The Silence of the Lambs,1991,Thriller  
+Titanic,1997,Romance  
+Jurassic Park,1993,Adventure  
+Back to the Future,1985,Sci-Fi  
+The Lion King,1994,Animation  
+Star Wars,1977,Sci-Fi  
+E.T. the Extra-Terrestrial,1982,Sci-Fi  
+Casablanca,1942,Romance  
+Psycho,1960,Horror  
+The Shining,1980,Horror  
+Avatar,2009,Sci-Fi  
+Schindler's List,1993,Drama  
+The Avengers,2012,Action  
+The Terminator,1984,Sci-Fi  
+Jaws,1975,Thriller  
+Braveheart,1995,Historical  
+The Exorcist,1973,Horror  
+Rocky,1976,Sports  
+Gone with the Wind,1939,Romance  
+The Wizard of Oz,1939,Fantasy  
+Blade Runner,1982,Sci-Fi  
+Die Hard,1988,Action  
+The Big Lebowski,1998,Comedy  
+Taxi Driver,1976,Crime  
+Alien,1979,Sci-Fi  
+The Departed,2006,Crime  
+Whiplash,2014,Drama  
+Parasite,2019,Thriller  
+La La Land,2016,Musical  
+The Social Network,2010,Drama  
+Her,2013,Romance  
+Eternal Sunshine of the Spotless Mind,2004,Sci-Fi  
+The Grand Budapest Hotel,2014,Comedy  
+No Country for Old Men,2007,Crime  
+The Revenant,2015,Adventure  
+Mad Max: Fury Road,2015,Action  
+Get Out,2017,Horror  
+Black Panther,2018,Superhero  
+The Shape of Water,2017,Fantasy  
+Predator,1987,Action  
+Beauty and the Beast,1991,Animation  
+Frozen,2013,Animation  
+Rogue One,2016,Sci-Fi  
+The Notebook,2004,Romance  
+Anchorman,2004,Comedy  
+Mean Girls,2004,Comedy  
+Clueless,1995,Comedy  
+Speed,1994,Action  
+The Princess Bride,1987,Adventure  
+Toy Story,1995,Animation  
+Up,2009,Animation  
+Ratatouille,2007,Animation  
+The Incredibles,2004,Animation  
+Oldboy,2003,Thriller  
+Spirited Away,2001,Animation  
+My Neighbor Totoro,1988,Animation  
+Princess Mononoke,1997,Animation  
+Grave of the Fireflies,1988,Animation  
+Akira,1988,Sci-Fi  
+Drive,2011,Thriller  
+Nightcrawler,2014,Thriller  
+Fargo,1996,Crime  
+Birdman,2014,Drama  
+12 Angry Men,1957,Drama  
+Life Is Beautiful,1997,Drama  
+Amélie,2001,Romance  
+Cinema Paradiso,1988,Drama  
+The Seventh Seal,1957,Drama  
+Vertigo,1958,Thriller  
+Rear Window,1954,Thriller  
+Citizen Kane,1941,Drama  
+Casino,1995,Crime  
+Scarface,1983,Crime  
+Heat,1995,Crime  
+Good Will Hunting,1997,Drama  
+Dead Poets Society,1989,Drama  
+The Truman Show,1998,Sci-Fi  
+Lost in Translation,2003,Drama  
+Before Sunrise,1995,Romance  
+Requiem for a Dream,2000,Drama  
+Donnie Darko,2001,Sci-Fi  
+The Usual Suspects,1995,Crime  
+Se7en,1995,Thriller  
+Zodiac,2007,Thriller  
+The Sixth Sense,1999,Thriller  
+Unbreakable,2000,Superhero  
+Signs,2002,Sci-Fi  
+The Village,2004,Thriller  
+Knives Out,2019,Mystery  
+Clue,1985,Comedy  
+Murder on the Orient Express,2017,Mystery  
