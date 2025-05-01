@@ -47,4 +47,3 @@ joshua,pluto,false
 melissa,moon,true
 andrew,earth,false
 taylor,sun,true
-john2,test,false
