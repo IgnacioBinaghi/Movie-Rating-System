@@ -10,10 +10,10 @@ public class WatchlistManager {
     
     public WatchlistManager(){
         this.watchlist = new ArrayList<>();
-        loadWatchlist();
+        readWatchlist();
     }
 
-    private void loadWatchlist(){
+    private void readWatchlist(){
         try (BufferedReader reader = new BufferedReader(new FileReader("./watchlists.txt"))){
             String line;
             while((line=reader.readLine())!=null){
