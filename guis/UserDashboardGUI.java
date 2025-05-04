@@ -38,6 +38,7 @@ public class UserDashboardGUI extends JFrame {
         add(searchBtn);
 
         // selecting browse
+        
         browseBtn = new JButton("Browse Movies");
         browseBtn.setBounds(100,110,180,30);
         browseBtn.addActionListener(new ActionListener(){

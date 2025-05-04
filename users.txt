@@ -18,7 +18,6 @@ mia,harrypotter,true
 jason,starwars,false
 hannah,thomas,true
 alex,coffee,false
-lily,password1,true
 brandon,123456,false
 grace,iloveyou,true
 nathan,admin,false
@@ -36,7 +35,6 @@ rachel,summer,true
 justin,winter,false
 amanda,spring,true
 robert,fall,false
-samantha,mercury,true
 patrick,jupiter,false
 jennifer,mars,true
 william,venus,false
@@ -48,3 +46,4 @@ melissa,moon,true
 andrew,earth,false
 taylor,sun,true
 john2,test,false
+ignacio,papa,true

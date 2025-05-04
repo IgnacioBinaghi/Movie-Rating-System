@@ -59,10 +59,10 @@ public class MovieManager {
         return movies;
     }
 
-    public boolean editMovie(String title, String year, String genre) {
+    public boolean editMovie(String title, String newTitle, String year, String genre) {
         for (int i = 0; i < movies.size(); i++) {
             if (movies.get(i).getTitle().equalsIgnoreCase(title)) {
-                if (title != null) {
+                if (newTitle != null && !newTitle.isEmpty()) {
                     movies.get(i).setTitle(title);
                 }
                 if (year != null) {

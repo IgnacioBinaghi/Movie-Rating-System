@@ -111,7 +111,7 @@ public class LoginGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Registration successful!");
             User user = userManager.getUser(username);
             if (this.admin) {
-                //new AdminDashboardGUI(user).setVisible(true); 
+                new AdminDashboardGUI(user).setVisible(true); 
             }
             else {
                 new UserDashboardGUI(user).setVisible(true);
@@ -133,7 +133,7 @@ public class LoginGUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Invalid credentials.");
             }     
             else {
-                //new AdminDashboardGUI(user).setVisible(true); need to implement
+                new AdminDashboardGUI(user).setVisible(true);
                 this.dispose();
             }
         }
