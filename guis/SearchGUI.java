@@ -34,7 +34,6 @@ public class SearchGUI extends JFrame {
 
         // search field label
         JLabel searchLabel = new JLabel("Search by title: ");
-        JLabel searchLabel = new JLabel("Search by title: ");
         searchLabel.setBounds(20,20, 120, 25);
         add(searchLabel);
 

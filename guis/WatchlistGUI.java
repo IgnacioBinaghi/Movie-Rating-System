@@ -2,6 +2,7 @@ package guis;
 
 import managers.WatchlistManager;
 import models.User;
+import managers.MovieManager;
 
 import javax.swing.*;
 import java.awt.event.*;
