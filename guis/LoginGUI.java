@@ -109,11 +109,12 @@ public class LoginGUI extends javax.swing.JFrame {
         boolean success = userManager.registerUser(username, password, this.admin);
         if (success) {
             JOptionPane.showMessageDialog(this, "Registration successful!");
+            User user = userManager.getUser(username);
             if (this.admin) {
                 //new AdminDashboardGUI(user).setVisible(true); 
             }
             else {
-                 //new UserDashboardGUI(user).setVisible(true);
+                new UserDashboardGUI(user).setVisible(true);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Username already exists.");
@@ -140,7 +141,7 @@ public class LoginGUI extends javax.swing.JFrame {
             if (user == null || user.isAdmin()) {
                 JOptionPane.showMessageDialog(this, "Invalid credentials.");
             } else {
-                //new UserDashboardGUI(user).setVisible(true); need to implement
+                new UserDashboardGUI(user).setVisible(true);
                 this.dispose();
             }
         }
