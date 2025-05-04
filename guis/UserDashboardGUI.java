@@ -7,8 +7,10 @@ import models.User;
 public class UserDashboardGUI extends JFrame {
     private User user;
 
+    // initializing gui elements 
     private JButton searchBtn, browseBtn, watchlistBtn;
 
+    // constructor (initializing gui here)
     public UserDashboardGUI(User user){
         this.user = user;
         initComponents();
@@ -20,12 +22,14 @@ public class UserDashboardGUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
 
+        // greeting user to dashboard
         JLabel welcomeLabel = new JLabel("Choose an action: ");
         welcomeLabel.setBounds(20,20,200,25);
         add(welcomeLabel);
 
+        // selecting search 
         searchBtn = new JButton("Search Movies");
-        searchBtn.setBounds(100,60,100,30);
+        searchBtn.setBounds(100,60,180,30);
         searchBtn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 new SearchGUI(user).setVisible(true);
@@ -33,6 +37,7 @@ public class UserDashboardGUI extends JFrame {
         });
         add(searchBtn);
 
+        // selecting browse
         browseBtn = new JButton("Browse Movies");
         browseBtn.setBounds(100,110,180,30);
         browseBtn.addActionListener(new ActionListener(){
@@ -42,6 +47,7 @@ public class UserDashboardGUI extends JFrame {
         });
         add(browseBtn);
 
+        // selecting watchlist
         watchlistBtn = new JButton("View Watchlist");
         watchlistBtn.setBounds(100, 160, 180, 30);
         watchlistBtn.addActionListener(new ActionListener() {
