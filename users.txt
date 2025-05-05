@@ -46,6 +46,6 @@ melissa,moon,true
 andrew,earth,false
 taylor,sun,true
 john2,test,false
-ignacio,papa,true
+ignacio,test,true
 test,test,false
 testAdmin,test,true
