@@ -98,17 +98,15 @@ public class MovieDetailGUI extends JFrame {
         btnRemoveFromWatchList.addActionListener(e -> btnRemoveFromWatchList_Click());
         add(btnRemoveFromWatchList);
 
-        /*
         btnBack = new JButton("Back");
         btnBack.setBounds(175, 440, 100, 30);
-        btnBack.addActionListener(e -> btnBack_click());
+        btnBack.addActionListener(e -> btnBack_click(user.isAdmin()));
         add(btnBack);
         //already added
         if (watchlistManager.isInWatchlist(user.getUsername(), movie.getTitle())) {
             btnAddToWatchlist.setEnabled(false);
             btnAddToWatchlist.setText("Already in Watchlist");
         }
-        */
     }
     private void btnAddToWatchlist_Click() {
         boolean added = watchlistManager.addToWatchlist(user.getUsername(), movie.getTitle());
@@ -136,8 +134,12 @@ public class MovieDetailGUI extends JFrame {
             JOptionPane.showMessageDialog(this, "Failed to submit review.");
         }
     }
-    private void btnBack_click() {
-        new UserDashboardGUI(user).setVisible(true);
+    private void btnBack_click(boolean isAdmin) {
+        if (isAdmin) {
+            new AdminDashboardGUI(user).setVisible(true);
+        } else {
+            new UserDashboardGUI(user).setVisible(true);
+        }
         dispose();
     }
 
