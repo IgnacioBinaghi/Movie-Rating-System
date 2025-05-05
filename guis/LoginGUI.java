@@ -118,9 +118,11 @@ public class LoginGUI extends javax.swing.JFrame {
             User user = userManager.getUser(username);
             if (this.admin) {
                 new AdminDashboardGUI(user).setVisible(true); 
+                this.dispose();
             }
             else {
                 new UserDashboardGUI(user).setVisible(true);
+                this.dispose();
             }
         } else {
             JOptionPane.showMessageDialog(this, "Username already exists.");
