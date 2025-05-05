@@ -23,7 +23,7 @@ public class UserManagementGUI extends JFrame {
     private void initComponents() {
         setTitle("User Management");
         setSize(400,300);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLayout(null);
 
         JLabel welcomeLabel = new JLabel("Welcome to User Management, " + admin.getUsername() + "!");
@@ -51,13 +51,5 @@ public class UserManagementGUI extends JFrame {
                 JOptionPane.showMessageDialog(this, "User not found");
             }
         });
-
-        JButton backbtn = new JButton("Back");
-        backbtn.setBounds(100,210,180,30);
-        backbtn.addActionListener(e -> {
-            this.dispose();
-            new AdminDashboardGUI(admin).setVisible(true);
-        });
-        add(backbtn);
     }
 }

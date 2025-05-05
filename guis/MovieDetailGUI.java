@@ -33,7 +33,7 @@ public class MovieDetailGUI extends JFrame {
 
     private void initComponents() {
         setTitle("Movie Details - " + movie.getTitle());
-        setSize(450, 420);
+        setSize(520, 500);
         setLayout(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -67,35 +67,35 @@ public class MovieDetailGUI extends JFrame {
         reviewsArea.setText(reviewsText.toString());
         
         JLabel ratingLabel = new JLabel("Your Rating:");
-        ratingLabel.setBounds(20, 150, 100, 25);
+        ratingLabel.setBounds(20, 250, 100, 25);
         add(ratingLabel);
 
         ratingComboBox = new JComboBox<>(new Integer[]{1, 2, 3, 4, 5});
-        ratingComboBox.setBounds(130,150,90,25);
+        ratingComboBox.setBounds(130,250,90,25);
         add(ratingComboBox);
 
         JLabel noteLabel = new JLabel("Your Note:");
-        noteLabel.setBounds(20, 190, 100, 25);
+        noteLabel.setBounds(20, 290, 100, 25);
         add(noteLabel);
 
         noteArea = new JTextArea();
         JScrollPane scroll = new JScrollPane(noteArea);
-        scroll.setBounds(20, 220, 380, 60);
+        scroll.setBounds(20, 320, 380, 60);
         add(scroll);
         
         btnSubmit = new JButton("Add Rating");
-        btnSubmit.setBounds(85, 300, 130, 30);
+        btnSubmit.setBounds(85, 390, 130, 30);
         btnSubmit.addActionListener(e -> btnSubmit_click()); 
         add(btnSubmit);
 
         btnAddToWatchlist = new JButton("Add to Watchlist");
-        btnAddToWatchlist.setBounds(85 + 130 + 20, 300, 130, 30);
+        btnAddToWatchlist.setBounds(85 + 130 + 20, 390, 130, 30);
         btnAddToWatchlist.addActionListener(e -> btnAddToWatchlist_Click());
         add(btnAddToWatchlist);
 
         btnRemoveFromWatchList = new JButton("Remove from Watchlist");
-        btnRemoveFromWatchList.setBounds(85 + 130 + 20, 340, 130, 30);
-        btnRemoveFromWatchList.addActionListener(e -> {btnRemoveFromWatchList_Click();});
+        btnRemoveFromWatchList.setBounds(85 + 130 + 20, 390+50, 200, 30);
+        btnRemoveFromWatchList.addActionListener(e -> btnRemoveFromWatchList_Click());
         add(btnRemoveFromWatchList);
 
         btnRemoveFromWatchList = new JButton("Remove from Watchlist");
@@ -126,6 +126,10 @@ public class MovieDetailGUI extends JFrame {
     private void btnSubmit_click() {
         int rating = (Integer) ratingComboBox.getSelectedItem();
         String note = noteArea.getText().trim();
+        if (note.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter a note before submitting your review.");
+            return;
+        }
         boolean success = reviewManager.addReview(user.getUsername(), movie.getTitle(), rating, note);
         if (success) {
             JOptionPane.showMessageDialog(this, "Review submitted sucessfully!");

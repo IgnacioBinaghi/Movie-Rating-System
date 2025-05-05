@@ -18,7 +18,7 @@ public class viewRatingsGUI extends JFrame {
     private void initComponents() {
         setTitle("Your Ratings - " + user.getUsername());
         setSize(400, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLayout(null);
 
         JLabel titleLabel = new JLabel("Your Ratings");
@@ -31,21 +31,12 @@ public class viewRatingsGUI extends JFrame {
         scrollPane.setBounds(20, 50, 350, 200);
         add(scrollPane);
 
-        JButton backBtn = new JButton("Back");
-        backBtn.setBounds(150, 260, 100, 30);
-        backBtn.addActionListener(e -> {
-            dispose();
-            new UserDashboardGUI(user).setVisible(true);
-        });
-        add(backBtn);
-
         List<Review> ratings = reviewManager.getUserReviews(user.getUsername());
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < ratings.size(); i++){
-            sb.append(ratings.get(i));
-            if (i != ratings.size() - 1){
-                sb.append("\n");
-            }
+            String title = ratings.get(i).getMovieTitle();
+            String rating = String.valueOf(ratings.get(i).getRating());
+            sb.append("Movie: ").append(title).append(", Rating: ").append(rating).append("\n");
         }
         ratingsArea.setText(sb.toString());
 

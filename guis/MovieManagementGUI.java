@@ -21,7 +21,7 @@ public class MovieManagementGUI extends JFrame {
         setSize(400,300);
         setLayout(null);
 
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         JButton addMovieBtn = new JButton("Add Movie");
         addMovieBtn.setBounds(100,60,180,30);
@@ -64,13 +64,5 @@ public class MovieManagementGUI extends JFrame {
             }
         });
         add(editMovieBtn);
-
-        JButton backbtn = new JButton("Back");
-        backbtn.setBounds(100,210,180,30);
-        backbtn.addActionListener(e -> {
-            this.dispose();
-            new AdminDashboardGUI(admin).setVisible(true);
-        });
-        add(backbtn);
     }
 }

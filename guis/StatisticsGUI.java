@@ -25,7 +25,7 @@ public class StatisticsGUI extends JFrame {
         setSize(400,400);
         setLayout(null);
         
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         JLabel statsLabel = new JLabel("Most Rated Movies / Total Users:");
         statsLabel.setBounds(20,20,300,25);
@@ -48,14 +48,6 @@ public class StatisticsGUI extends JFrame {
             stats.append(i + 1).append(". ").append(mostRatedMovies.get(i)).append("\n");
         }
         statsArea.setText(stats.toString());
-
-        JButton backbtn = new JButton("Back");
-        backbtn.setBounds(100,310,180,30);
-        backbtn.addActionListener(e -> {
-            this.dispose();
-            new AdminDashboardGUI(admin).setVisible(true);
-        });
-        add(backbtn);
     }
 
 

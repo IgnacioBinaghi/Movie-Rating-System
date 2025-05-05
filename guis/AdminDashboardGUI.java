@@ -25,7 +25,7 @@ public class AdminDashboardGUI extends JFrame {
         add(welcomeLabel);
 
         searchBtn = new JButton("Search Movies");
-        searchBtn.setBounds(100,60,100,30);
+        searchBtn.setBounds(100,60,180,30);
         searchBtn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 new SearchGUI(admin).setVisible(true);
