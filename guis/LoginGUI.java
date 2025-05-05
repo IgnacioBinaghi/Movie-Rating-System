@@ -1,6 +1,7 @@
 package guis;
 
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 import managers.UserManager;
 import models.User;
@@ -11,6 +12,7 @@ public class LoginGUI extends javax.swing.JFrame {
     UserManager userManager = new UserManager();
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegister;
+    private javax.swing.JButton btnBack;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel lblPassword;
@@ -25,90 +27,89 @@ public class LoginGUI extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
-
-        lblTitle = new javax.swing.JLabel();
-        lblUsername = new javax.swing.JLabel();
-        lblPassword = new javax.swing.JLabel();
-        btnRegister = new javax.swing.JButton();
-        btnLogin = new javax.swing.JButton();
-        fieldUsername = new javax.swing.JTextField();
-        fieldPassword = new javax.swing.JTextField();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(450, 420);
+        
+        lblTitle = new javax.swing.JLabel("Movie Rating System – Login / Register", javax.swing.SwingConstants.CENTER);
+        lblTitle.setFont(new java.awt.Font("Helvetica Neue", java.awt.Font.BOLD, 13));
+    
+        lblUsername = new javax.swing.JLabel("Username:");
+        lblPassword = new javax.swing.JLabel("Password:");
+        fieldUsername = new javax.swing.JTextField(20);
+        fieldPassword = new javax.swing.JTextField(20);
+    
+        btnLogin = new javax.swing.JButton("Login");
+        btnRegister = new javax.swing.JButton("Register");
+        btnBack = new javax.swing.JButton("Back");
 
-        lblTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Movie Rating System - Login/Register");
+        java.awt.Dimension btnSize = new java.awt.Dimension(120, 30);
+        btnLogin.setPreferredSize(btnSize);
+        btnRegister.setPreferredSize(btnSize);
+        btnLogin.setMaximumSize(btnSize);
+        btnRegister.setMaximumSize(btnSize);
+    
+        btnLogin.addActionListener(this::btnLogin_click);
+        btnRegister.addActionListener(this::btnRegister_click);
+        btnBack.addActionListener(this::btnBack_click);
+    
+        java.awt.Container pane = getContentPane();
+        pane.setLayout(new java.awt.GridBagLayout());
+        java.awt.GridBagConstraints gbc = new java.awt.GridBagConstraints();
+        gbc.insets = new java.awt.Insets(5, 10, 5, 10); // uniform padding
+    
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2;
+        gbc.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        pane.add(lblTitle, gbc);
+    
+        gbc.gridy = 1;
+        gbc.weighty = 0;
+        pane.add(javax.swing.Box.createVerticalStrut(80), gbc);
+    
+        gbc.gridwidth = 1;
+        gbc.gridy = 2;
+        gbc.gridx = 0;
+        gbc.anchor = java.awt.GridBagConstraints.EAST;
+        gbc.fill = java.awt.GridBagConstraints.NONE;
+        pane.add(lblUsername, gbc);
+    
+        gbc.gridx = 1;
+        gbc.anchor = java.awt.GridBagConstraints.WEST;
+        gbc.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        pane.add(fieldUsername, gbc);
+    
+        gbc.gridy = 3;
+        gbc.gridx = 0;
+        gbc.anchor = java.awt.GridBagConstraints.EAST;
+        gbc.fill = java.awt.GridBagConstraints.NONE;
+        pane.add(lblPassword, gbc);
+    
+        gbc.gridx = 1;
+        gbc.anchor = java.awt.GridBagConstraints.WEST;
+        gbc.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        pane.add(fieldPassword, gbc);
 
-        lblUsername.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblUsername.setText("Username");
-
-        btnRegister.setText("Register");
-        btnRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegister_click(evt);
-            }
-        });
-
-        btnLogin.setText("Login");
-        btnLogin.setToolTipText("");
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogin_click(evt);
-            }
-        });
-
-        lblPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPassword.setText("Password");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(fieldUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                            .addComponent(fieldPassword)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(116, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblTitle)
-                .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsername)
-                    .addComponent(fieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPassword)
-                    .addComponent(fieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLogin)
-                    .addComponent(btnRegister))
-                .addContainerGap(96, Short.MAX_VALUE))
-        );
-
-        pack();
-    }// </editor-fold>                        
-
+        gbc.gridy = 4;
+        gbc.gridx = 0;
+        gbc.gridwidth = 2;
+        pane.add(javax.swing.Box.createVerticalStrut(30), gbc);
+    
+        JPanel buttonsPanel = new JPanel(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 0));
+        buttonsPanel.add(btnLogin);
+        buttonsPanel.add(btnRegister);
+    
+        gbc.gridy = 5;
+        gbc.fill = java.awt.GridBagConstraints.NONE;
+        gbc.anchor = java.awt.GridBagConstraints.CENTER;
+        pane.add(buttonsPanel, gbc);
+    
+        gbc.gridy = 6;
+        gbc.gridwidth = 2;
+        gbc.anchor = java.awt.GridBagConstraints.CENTER;
+        pane.add(btnBack, gbc);
+    }
+    
     private void btnRegister_click(java.awt.event.ActionEvent evt) {   
         String username = fieldUsername.getText().trim();
         String password = fieldPassword.getText().trim();
@@ -152,9 +153,11 @@ public class LoginGUI extends javax.swing.JFrame {
                 this.dispose();
             }
         }
-              
-
-    }                        
+    }      
+    private void btnBack_click(java.awt.event.ActionEvent evt) {
+        new MainGUI().setVisible(true); 
+        this.dispose();
+    }                  
 
     /**
      * @param args the command line arguments
