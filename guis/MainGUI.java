@@ -1,7 +1,11 @@
 package guis;
 
 public class MainGUI extends javax.swing.JFrame {
-
+    private javax.swing.JButton btnAdmin;
+    private javax.swing.JButton btnUser;
+    private javax.swing.JLabel lblWelcome;
+    private javax.swing.JLabel lblRole;
+    
     public MainGUI() {
         initComponents();
     }
@@ -9,31 +13,31 @@ public class MainGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        AdminBtn = new javax.swing.JButton();
-        UserBtn = new javax.swing.JButton();
+        lblWelcome = new javax.swing.JLabel();
+        lblRole = new javax.swing.JLabel();
+        btnAdmin = new javax.swing.JButton();
+        btnUser = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Welcome to the Movie Rating System!");
+        lblWelcome.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblWelcome.setText("Welcome to the Movie Rating System!");
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Proceed as:");
+        lblRole.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRole.setText("Proceed as:");
 
-        AdminBtn.setText("Admin");
-        AdminBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnAdmin.setText("Admin");
+        btnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdminBtnActionPerformed(evt);
+                btnAdmin_click(evt);
             }
         });
 
-        UserBtn.setText("User");
-        UserBtn.addActionListener(new java.awt.event.ActionListener() {
+        btnUser.setText("User");
+        btnUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserBtnActionPerformed(evt);
+                btnUser_click(evt);
             }
         });
 
@@ -44,41 +48,39 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblRole, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(199, 199, 199)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(UserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                    .addComponent(AdminBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnUser, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                    .addComponent(btnAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(194, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jLabel2)
+                .addComponent(lblWelcome)
                 .addGap(70, 70, 70)
-                .addComponent(jLabel4)
+                .addComponent(lblRole)
                 .addGap(26, 26, 26)
-                .addComponent(UserBtn)
+                .addComponent(btnUser)
                 .addGap(18, 18, 18)
-                .addComponent(AdminBtn)
+                .addComponent(btnAdmin)
                 .addContainerGap(134, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>                        
 
-    private void AdminBtnActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+    private void btnAdmin_click(java.awt.event.ActionEvent evt) {                                         
         new LoginGUI(true).setVisible(true);  //admin 
         this.dispose();
     }                                        
 
-    private void UserBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        // TODO add your handling code here:
+    private void btnUser_click(java.awt.event.ActionEvent evt) {                                        
         new LoginGUI(false).setVisible(true);  //user 
         this.dispose();
     }                                       
@@ -94,10 +96,5 @@ public class MainGUI extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration                   
-    private javax.swing.JButton AdminBtn;
-    private javax.swing.JButton UserBtn;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    // End of variables declaration                   
+                    
 }
