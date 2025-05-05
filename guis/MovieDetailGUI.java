@@ -15,10 +15,10 @@ public class MovieDetailGUI extends JFrame {
     private ReviewManager reviewManager;
     private WatchlistManager watchlistManager;
 
-    private JLabel titleLabel, genreLabel, yearLabel, avgRatingLabel;
+    private JLabel lblTitle, lblGenre, lblYear, lblAvgRating;
     private JComboBox<Integer> ratingComboBox;
     private JTextArea noteArea;
-    private JButton submitBtn, addToWatchlistBtn;
+    private JButton btnSubmit, btnAddToWatchlist;
 
     public MovieDetailGUI(User user, String movieTitle) {
         this.user = user;
@@ -36,29 +36,29 @@ public class MovieDetailGUI extends JFrame {
         setLayout(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        titleLabel = new JLabel("Title: " + movie.getTitle());
-        titleLabel.setBounds(20, 20, 400, 25);
-        add(titleLabel);
+        lblTitle = new JLabel("Title: " + movie.getTitle());
+        lblTitle.setBounds(20, 20, 400, 25);
+        add(lblTitle);
 
-        genreLabel = new JLabel("Genre: " + movie.getGenre());
-        genreLabel.setBounds(20, 50, 300, 25);
-        add(genreLabel);
+        lblGenre = new JLabel("Genre: " + movie.getGenre());
+        lblGenre.setBounds(20, 50, 300, 25);
+        add(lblGenre);
 
-        yearLabel = new JLabel("Year: " + movie.getYear());
-        yearLabel.setBounds(20, 80, 300, 25);
-        add(yearLabel);
+        lblYear = new JLabel("Year: " + movie.getYear());
+        lblYear.setBounds(20, 80, 300, 25);
+        add(lblYear);
 
         double avg = reviewManager.getAverageRating(movie.getTitle());
-        avgRatingLabel = new JLabel("Average Rating: " + (avg > 0 ? String.format("%.2f", avg) : "No ratings yet"));
-        avgRatingLabel.setBounds(20, 110, 300, 25);
-        add(avgRatingLabel);
-        /* 
+        lblAvgRating = new JLabel("Average Rating: " + (avg > 0 ? String.format("%.2f", avg) : "No ratings yet"));
+        lblAvgRating.setBounds(20, 110, 300, 25);
+        add(lblAvgRating);
+        
         JLabel ratingLabel = new JLabel("Your Rating:");
         ratingLabel.setBounds(20, 150, 100, 25);
         add(ratingLabel);
 
         ratingComboBox = new JComboBox<>(new Integer[]{1, 2, 3, 4, 5});
-        ratingComboBox.setBounds(130, 150, 50, 25);
+        ratingComboBox.setBounds(130,150,90,25);
         add(ratingComboBox);
 
         JLabel noteLabel = new JLabel("Your Note:");
@@ -69,31 +69,43 @@ public class MovieDetailGUI extends JFrame {
         JScrollPane scroll = new JScrollPane(noteArea);
         scroll.setBounds(20, 220, 380, 60);
         add(scroll);
-        */
-        submitBtn = new JButton("Add Rating");
-        submitBtn.setBounds(85, 300, 130, 30);
-        //submitBtn.addActionListener(e -> SubmitBtn_Click()); need to implement
-        add(submitBtn);
+        
+        btnSubmit = new JButton("Add Rating");
+        btnSubmit.setBounds(85, 300, 130, 30);
+        btnSubmit.addActionListener(e -> btnSubmit_click()); 
+        add(btnSubmit);
 
-        addToWatchlistBtn = new JButton("Add to Watchlist");
-        addToWatchlistBtn.setBounds(85 + 130 + 20, 300, 130, 30);
-        addToWatchlistBtn.addActionListener(e -> AddToWatchlistBttn_Click());
-        add(addToWatchlistBtn);
+        btnAddToWatchlist = new JButton("Add to Watchlist");
+        btnAddToWatchlist.setBounds(85 + 130 + 20, 300, 130, 30);
+        btnAddToWatchlist.addActionListener(e -> btnAddToWatchlist_Click());
+        add(btnAddToWatchlist);
 
         //already added
         if (watchlistManager.isInWatchlist(user.getUsername(), movie.getTitle())) {
-            addToWatchlistBtn.setEnabled(false);
-            addToWatchlistBtn.setText("Already in Watchlist");
+            btnAddToWatchlist.setEnabled(false);
+            btnAddToWatchlist.setText("Already in Watchlist");
         }
     }
-    private void AddToWatchlistBttn_Click() {
+    private void btnAddToWatchlist_Click() {
         boolean added = watchlistManager.addToWatchlist(user.getUsername(), movie.getTitle());
         if (added) {
             JOptionPane.showMessageDialog(this, "Movie added to your watchlist.");
-            addToWatchlistBtn.setEnabled(false);
-            addToWatchlistBtn.setText("Already in Watchlist");
+            btnAddToWatchlist.setEnabled(false);
+            btnAddToWatchlist.setText("Already in Watchlist");
         } else {
             JOptionPane.showMessageDialog(this, "Movie is already in your watchlist.");
+        }
+    }
+    private void btnSubmit_click() {
+        int rating = (Integer) ratingComboBox.getSelectedItem();
+        String note = noteArea.getText().trim();
+        boolean success = reviewManager.addReview(user.getUsername(), movie.getTitle(), rating, note);
+        if (success) {
+            JOptionPane.showMessageDialog(this, "Review submitted sucessfully!");
+            double avg = reviewManager.getAverageRating(movie.getTitle());
+            lblAvgRating.setText("Average Rating: " + String.format("%.2f", avg));
+        } else {
+            JOptionPane.showMessageDialog(this, "Failed to submit review.");
         }
     }
 }
