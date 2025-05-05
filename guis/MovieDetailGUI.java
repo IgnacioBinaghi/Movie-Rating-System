@@ -33,7 +33,7 @@ public class MovieDetailGUI extends JFrame {
 
     private void initComponents() {
         setTitle("Movie Details - " + movie.getTitle());
-        setSize(520, 500);
+        setSize(540, 560);
         setLayout(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -84,27 +84,23 @@ public class MovieDetailGUI extends JFrame {
         add(scroll);
         
         btnSubmit = new JButton("Add Rating");
-        btnSubmit.setBounds(85, 390, 130, 30);
+        btnSubmit.setBounds(30, 400, 120, 30);
         btnSubmit.addActionListener(e -> btnSubmit_click()); 
         add(btnSubmit);
 
         btnAddToWatchlist = new JButton("Add to Watchlist");
-        btnAddToWatchlist.setBounds(85 + 130 + 20, 390, 130, 30);
+        btnAddToWatchlist.setBounds(160, 400, 150, 30);
         btnAddToWatchlist.addActionListener(e -> btnAddToWatchlist_Click());
         add(btnAddToWatchlist);
 
         btnRemoveFromWatchList = new JButton("Remove from Watchlist");
-        btnRemoveFromWatchList.setBounds(85 + 130 + 20, 390+50, 200, 30);
+        btnRemoveFromWatchList.setBounds(320, 400, 180, 30);
         btnRemoveFromWatchList.addActionListener(e -> btnRemoveFromWatchList_Click());
         add(btnRemoveFromWatchList);
 
-        btnRemoveFromWatchList = new JButton("Remove from Watchlist");
-        btnRemoveFromWatchList.setBounds(85 + 130 + 20, 340, 130, 30);
-        btnRemoveFromWatchList.addActionListener(e -> {btnRemoveFromWatchList_Click();});
-        add(btnRemoveFromWatchList);
-
+        /*
         btnBack = new JButton("Back");
-        btnBack.setBounds(175, 340, 100, 30);
+        btnBack.setBounds(175, 440, 100, 30);
         btnBack.addActionListener(e -> btnBack_click());
         add(btnBack);
         //already added
@@ -112,6 +108,7 @@ public class MovieDetailGUI extends JFrame {
             btnAddToWatchlist.setEnabled(false);
             btnAddToWatchlist.setText("Already in Watchlist");
         }
+        */
     }
     private void btnAddToWatchlist_Click() {
         boolean added = watchlistManager.addToWatchlist(user.getUsername(), movie.getTitle());
