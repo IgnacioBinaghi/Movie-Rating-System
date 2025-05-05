@@ -18,7 +18,7 @@ public class MovieDetailGUI extends JFrame {
     private JLabel lblTitle, lblGenre, lblYear, lblAvgRating;
     private JComboBox<Integer> ratingComboBox;
     private JTextArea noteArea;
-    private JButton btnSubmit, btnAddToWatchlist;
+    private JButton btnSubmit, btnAddToWatchlist, btnBack;
 
     public MovieDetailGUI(User user, String movieTitle) {
         this.user = user;
@@ -80,6 +80,10 @@ public class MovieDetailGUI extends JFrame {
         btnAddToWatchlist.addActionListener(e -> btnAddToWatchlist_Click());
         add(btnAddToWatchlist);
 
+        btnBack = new JButton("Back");
+        btnBack.setBounds(175, 340, 100, 30);
+        btnBack.addActionListener(e -> btnBack_click());
+        add(btnBack);
         //already added
         if (watchlistManager.isInWatchlist(user.getUsername(), movie.getTitle())) {
             btnAddToWatchlist.setEnabled(false);
@@ -107,5 +111,9 @@ public class MovieDetailGUI extends JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Failed to submit review.");
         }
+    }
+    private void btnBack_click() {
+        new UserDashboardGUI(user).setVisible(true);
+        dispose();
     }
 }
