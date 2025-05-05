@@ -19,6 +19,7 @@ public class MovieDetailGUI extends JFrame {
     private JComboBox<Integer> ratingComboBox;
     private JTextArea noteArea;
     private JButton btnSubmit, btnAddToWatchlist, btnBack;
+    private JButton btnRemoveFromWatchList;
 
     public MovieDetailGUI(User user, String movieTitle) {
         this.user = user;
@@ -52,6 +53,18 @@ public class MovieDetailGUI extends JFrame {
         lblAvgRating = new JLabel("Average Rating: " + (avg > 0 ? String.format("%.2f", avg) : "No ratings yet"));
         lblAvgRating.setBounds(20, 110, 300, 25);
         add(lblAvgRating);
+
+        // displaying reviews
+        JTextArea reviewsArea = new JTextArea();
+        reviewsArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(reviewsArea);
+        scrollPane.setBounds(20, 140, 400, 100);
+        add(scrollPane);
+        StringBuilder reviewsText = new StringBuilder();
+        for (Review review : reviewManager.getMovieReviews(movie.getTitle())) {
+            reviewsText.append(review.getUsername()).append(": ").append(review.getRating()).append(" - ").append(review.getNote()).append("\n");
+        }
+        reviewsArea.setText(reviewsText.toString());
         
         JLabel ratingLabel = new JLabel("Your Rating:");
         ratingLabel.setBounds(20, 150, 100, 25);
@@ -79,6 +92,16 @@ public class MovieDetailGUI extends JFrame {
         btnAddToWatchlist.setBounds(85 + 130 + 20, 300, 130, 30);
         btnAddToWatchlist.addActionListener(e -> btnAddToWatchlist_Click());
         add(btnAddToWatchlist);
+
+        btnRemoveFromWatchList = new JButton("Remove from Watchlist");
+        btnRemoveFromWatchList.setBounds(85 + 130 + 20, 340, 130, 30);
+        btnRemoveFromWatchList.addActionListener(e -> {btnRemoveFromWatchList_Click();});
+        add(btnRemoveFromWatchList);
+
+        btnRemoveFromWatchList = new JButton("Remove from Watchlist");
+        btnRemoveFromWatchList.setBounds(85 + 130 + 20, 340, 130, 30);
+        btnRemoveFromWatchList.addActionListener(e -> {btnRemoveFromWatchList_Click();});
+        add(btnRemoveFromWatchList);
 
         btnBack = new JButton("Back");
         btnBack.setBounds(175, 340, 100, 30);
@@ -115,5 +138,16 @@ public class MovieDetailGUI extends JFrame {
     private void btnBack_click() {
         new UserDashboardGUI(user).setVisible(true);
         dispose();
+    }
+
+    private void btnRemoveFromWatchList_Click() {
+        boolean removed = watchlistManager.removeFromWatchlist(user.getUsername(), movie.getTitle());
+        if (removed) {
+            JOptionPane.showMessageDialog(this, "Movie removed from your watchlist.");
+            btnRemoveFromWatchList.setEnabled(false);
+            btnRemoveFromWatchList.setText("Already Removed from Watchlist");
+        } else {
+            JOptionPane.showMessageDialog(this, "Movie is not in your watchlist.");
+        }
     }
 }

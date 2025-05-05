@@ -57,5 +57,15 @@ public class UserDashboardGUI extends JFrame {
             }
         });
         add(watchlistBtn);
+
+        // selecting view ratings
+        JButton viewRatingsBtn = new JButton("View Your Ratings");
+        viewRatingsBtn.setBounds(100, 210, 180, 30);
+        viewRatingsBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                new viewRatingsGUI(user).setVisible(true);
+            }
+        });
+        add(viewRatingsBtn);
     }
 }

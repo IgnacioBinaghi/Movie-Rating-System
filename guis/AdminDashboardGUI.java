@@ -35,7 +35,7 @@ public class AdminDashboardGUI extends JFrame {
 
 
         browseBtn = new JButton("Browse Movies");
-        browseBtn.setBounds(100,110,180,30);
+        browseBtn.setBounds(100,100,180,30);
         browseBtn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 new BrowseGUI(admin).setVisible(true);
@@ -44,7 +44,7 @@ public class AdminDashboardGUI extends JFrame {
         add(browseBtn);
 
         JButton manageMovieBtn = new JButton("Manage Movies");
-        manageMovieBtn.setBounds(100,60,180,30);
+        manageMovieBtn.setBounds(100,140,180,30);
         manageMovieBtn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 new MovieManagementGUI(admin).setVisible(true);
@@ -53,7 +53,7 @@ public class AdminDashboardGUI extends JFrame {
         add(manageMovieBtn);
 
         JButton manageUserBtn = new JButton("Manage Users");
-        manageUserBtn.setBounds(100,110,180,30);
+        manageUserBtn.setBounds(100,180,180,30);
         manageUserBtn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 new UserManagementGUI(admin).setVisible(true);
@@ -62,7 +62,7 @@ public class AdminDashboardGUI extends JFrame {
         add(manageUserBtn);
 
         JButton viewStatisticsBtn = new JButton("View Statistics");
-        viewStatisticsBtn.setBounds(100, 160, 180, 30);
+        viewStatisticsBtn.setBounds(100, 220, 180, 30);
         viewStatisticsBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 new StatisticsGUI(admin).setVisible(true);
