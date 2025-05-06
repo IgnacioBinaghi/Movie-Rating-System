@@ -11,9 +11,9 @@ public class UserManagementGUI extends JFrame {
     private UserManager userManager;
     private ReviewManager reviewManager;
     private WatchlistManager watchlistManager;
-    private JLabel welcomeLabel, usernameLabel;
-    private JTextField usernameField;
-    private JButton deleteUserBtn;
+    private JLabel welcomeLabel, usernameLabel, createUserLabel, newUsernameLabel, newPasswordLabel;
+    private JTextField usernameField, newUsernameField, newPasswordField;
+    private JButton deleteUserBtn, createUserBtn;
 
 
     public UserManagementGUI(User admin) {
@@ -46,6 +46,30 @@ public class UserManagementGUI extends JFrame {
         deleteUserBtn = new JButton("Delete User");
         deleteUserBtn.setBounds(100,100,150,30);
         add(deleteUserBtn);
+        
+        createUserLabel = new JLabel("Or create new Film Reviewer:");
+        createUserLabel.setBounds(20, 140, 200, 25);
+        add(createUserLabel);
+
+        newUsernameLabel = new JLabel("Username:");
+        newUsernameLabel.setBounds(20, 170, 100, 25);
+        add(newUsernameLabel);
+
+        newUsernameField = new JTextField();
+        newUsernameField.setBounds(100, 170, 250, 25);
+        add(newUsernameField);
+
+        newPasswordLabel = new JLabel("Password:");
+        newPasswordLabel.setBounds(20, 200, 100, 25);
+        add(newPasswordLabel);
+
+        newPasswordField = new JTextField();
+        newPasswordField.setBounds(100, 200, 250, 25);
+        add(newPasswordField);
+
+        createUserBtn = new JButton("Create User");
+        createUserBtn.setBounds(100, 240, 150, 30);
+        add(createUserBtn);
 
         deleteUserBtn.addActionListener(e -> {
             String usernameToDelete = usernameField.getText();
@@ -53,6 +77,15 @@ public class UserManagementGUI extends JFrame {
                 JOptionPane.showMessageDialog(this, "User deleted");
             } else {
                 JOptionPane.showMessageDialog(this, "User not found");
+            }
+        });
+        createUserBtn.addActionListener(e -> {
+            String newUsername = newUsernameField.getText().trim();
+            String newPassword = newPasswordField.getText().trim();
+            if (userManager.registerUser(newUsername, newPassword, false)) {
+                JOptionPane.showMessageDialog(this, "User created successfully.");
+            } else {
+                JOptionPane.showMessageDialog(this, "Username already exists.");
             }
         });
     }
