@@ -8,6 +8,7 @@ import models.Movie;
 public class MovieManagementGUI extends JFrame {
     private User admin;
     private MovieManager movieManager;
+    private JButton addMovieBtn, removeMovieBtn, editMovieBtn;
 
 
     public MovieManagementGUI(User admin){
@@ -23,7 +24,7 @@ public class MovieManagementGUI extends JFrame {
 
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        JButton addMovieBtn = new JButton("Add Movie");
+        addMovieBtn = new JButton("Add Movie");
         addMovieBtn.setBounds(100,60,180,30);
         addMovieBtn.addActionListener(e -> {
             String title = JOptionPane.showInputDialog("Enter movie title:");
@@ -35,7 +36,7 @@ public class MovieManagementGUI extends JFrame {
         });
         add(addMovieBtn);
 
-        JButton removeMovieBtn = new JButton("Remove Movie");
+        removeMovieBtn = new JButton("Remove Movie");
         removeMovieBtn.setBounds(100,110,180,30);
         removeMovieBtn.addActionListener(e -> {
             String title = JOptionPane.showInputDialog("Enter movie title to remove:");
@@ -47,7 +48,7 @@ public class MovieManagementGUI extends JFrame {
         });
         add(removeMovieBtn);
 
-        JButton editMovieBtn = new JButton("Edit Movie");
+        editMovieBtn = new JButton("Edit Movie");
         editMovieBtn.setBounds(100,160,180,30);
         editMovieBtn.addActionListener(e -> {
             String title = JOptionPane.showInputDialog("Enter movie title to edit:");

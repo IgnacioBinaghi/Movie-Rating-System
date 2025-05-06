@@ -16,6 +16,7 @@ public class WatchlistGUI extends JFrame{
     // initializing gui components
     private DefaultListModel<String> watchlistModel;
     private JList<String> watchlistList; 
+    private JScrollPane scrollPane;
 
     // constructor -- takes username and initializes GUI
     public WatchlistGUI(User user){
@@ -33,7 +34,7 @@ public class WatchlistGUI extends JFrame{
         // initializing list and UI (JList) to display watchlist
         watchlistModel = new DefaultListModel<>();
         watchlistList = new JList<>(watchlistModel);
-        JScrollPane scrollPane = new JScrollPane(watchlistList);
+        scrollPane = new JScrollPane(watchlistList);
         scrollPane.setBounds(20,20,440,300);
         add(scrollPane);
         

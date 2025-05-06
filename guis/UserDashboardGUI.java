@@ -8,7 +8,8 @@ public class UserDashboardGUI extends JFrame {
     private User user;
 
     // initializing gui elements 
-    private JButton searchBtn, browseBtn, watchlistBtn;
+    private JButton searchBtn, browseBtn, watchlistBtn, viewRatingsBtn;
+    private JLabel welcomeLabel;
 
     // constructor (initializing gui here)
     public UserDashboardGUI(User user){
@@ -23,7 +24,7 @@ public class UserDashboardGUI extends JFrame {
         setLayout(null);
 
         // greeting user to dashboard
-        JLabel welcomeLabel = new JLabel("Choose an action: ");
+        welcomeLabel = new JLabel("Choose an action: ");
         welcomeLabel.setBounds(20,20,200,25);
         add(welcomeLabel);
 
@@ -59,7 +60,7 @@ public class UserDashboardGUI extends JFrame {
         add(watchlistBtn);
 
         // selecting view ratings
-        JButton viewRatingsBtn = new JButton("View Your Ratings");
+        viewRatingsBtn = new JButton("View Your Ratings");
         viewRatingsBtn.setBounds(100, 210, 180, 30);
         viewRatingsBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){

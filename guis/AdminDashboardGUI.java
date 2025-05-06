@@ -7,7 +7,9 @@ import models.User;
 public class AdminDashboardGUI extends JFrame {
     private User admin;
 
-    private JButton searchBtn, browseBtn;
+    //ui elements
+    private JButton searchBtn, browseBtn, manageMovieBtn, manageUserBtn, viewStatisticsBtn;
+    private JLabel welcomeLabel;
 
     public AdminDashboardGUI(User admin){
         this.admin = admin;
@@ -20,7 +22,7 @@ public class AdminDashboardGUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
 
-        JLabel welcomeLabel = new JLabel("Choose an action: ");
+        welcomeLabel = new JLabel("Choose an action: ");
         welcomeLabel.setBounds(20,20,200,25);
         add(welcomeLabel);
 
@@ -43,7 +45,7 @@ public class AdminDashboardGUI extends JFrame {
         });
         add(browseBtn);
 
-        JButton manageMovieBtn = new JButton("Manage Movies");
+        manageMovieBtn = new JButton("Manage Movies");
         manageMovieBtn.setBounds(100,140,180,30);
         manageMovieBtn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -52,7 +54,7 @@ public class AdminDashboardGUI extends JFrame {
         });
         add(manageMovieBtn);
 
-        JButton manageUserBtn = new JButton("Manage Users");
+        manageUserBtn = new JButton("Manage Users");
         manageUserBtn.setBounds(100,180,180,30);
         manageUserBtn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -61,7 +63,7 @@ public class AdminDashboardGUI extends JFrame {
         });
         add(manageUserBtn);
 
-        JButton viewStatisticsBtn = new JButton("View Statistics");
+        viewStatisticsBtn = new JButton("View Statistics");
         viewStatisticsBtn.setBounds(100, 220, 180, 30);
         viewStatisticsBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){

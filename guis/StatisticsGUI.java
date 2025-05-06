@@ -12,6 +12,9 @@ public class StatisticsGUI extends JFrame {
 
     private ReviewManager reviewManager;
     private UserManager userManager;
+    private JLabel statsLabel;
+    private JTextArea statsArea;
+    private JScrollPane scrollPane;
 
     public StatisticsGUI(User admin){
         this.admin = admin;
@@ -27,13 +30,13 @@ public class StatisticsGUI extends JFrame {
         
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        JLabel statsLabel = new JLabel("Most Rated Movies / Total Users:");
+        statsLabel = new JLabel("Most Rated Movies / Total Users:");
         statsLabel.setBounds(20,20,300,25);
         add(statsLabel);
 
-        JTextArea statsArea = new JTextArea();
+        statsArea = new JTextArea();
         statsArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(statsArea);
+        scrollPane = new JScrollPane(statsArea);
         scrollPane.setBounds(20, 50, 350, 250);
         add(scrollPane);
 

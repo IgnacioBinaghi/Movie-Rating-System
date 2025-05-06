@@ -11,6 +11,10 @@ public class UserManagementGUI extends JFrame {
     private UserManager userManager;
     private ReviewManager reviewManager;
     private WatchlistManager watchlistManager;
+    private JLabel welcomeLabel, usernameLabel;
+    private JTextField usernameField;
+    private JButton deleteUserBtn;
+
 
     public UserManagementGUI(User admin) {
         this.admin = admin;
@@ -26,20 +30,20 @@ public class UserManagementGUI extends JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLayout(null);
 
-        JLabel welcomeLabel = new JLabel("Welcome to User Management, " + admin.getUsername() + "!");
+        welcomeLabel = new JLabel("Welcome to User Management, " + admin.getUsername() + "!");
         welcomeLabel.setBounds(20,20,300,25);
         add(welcomeLabel);
 
-        JLabel usernameLabel = new JLabel("Enter Username to delete: ");
+        usernameLabel = new JLabel("Enter Username to delete: ");
         usernameLabel.setBounds(20,60,200,25);
         add(usernameLabel);
 
-        JTextField usernameField = new JTextField();
+        usernameField = new JTextField();
         usernameField.setBounds(200,60,150,25);
         add(usernameField);
 
 
-        JButton deleteUserBtn = new JButton("Delete User");
+        deleteUserBtn = new JButton("Delete User");
         deleteUserBtn.setBounds(100,100,150,30);
         add(deleteUserBtn);
 

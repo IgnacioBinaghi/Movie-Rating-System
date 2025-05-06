@@ -8,6 +8,12 @@ import managers.ReviewManager;
 public class viewRatingsGUI extends JFrame {
     private User user;
     private ReviewManager reviewManager;
+    private JLabel titleLabel;
+    private JTextArea ratingsArea;
+    private JScrollPane scrollPane;
+    private DefaultComboBoxModel<String> reviewedTitlesModel;
+    private JComboBox<String> reviewDropdown;
+    private JButton deleteReviewBtn;
 
     public viewRatingsGUI(User user) {
         this.user = user;
@@ -21,13 +27,13 @@ public class viewRatingsGUI extends JFrame {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLayout(null);
 
-        JLabel titleLabel = new JLabel("Your Ratings");
+        titleLabel = new JLabel("Your Ratings");
         titleLabel.setBounds(20, 20, 200, 25);
         add(titleLabel);
 
-        JTextArea ratingsArea = new JTextArea();
+        ratingsArea = new JTextArea();
         ratingsArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(ratingsArea);
+        scrollPane = new JScrollPane(ratingsArea);
         scrollPane.setBounds(20, 50, 350, 200);
         add(scrollPane);
 
@@ -40,16 +46,16 @@ public class viewRatingsGUI extends JFrame {
         }
         ratingsArea.setText(sb.toString());
 
-        DefaultComboBoxModel<String> reviewedTitlesModel  = new DefaultComboBoxModel<>();
+        reviewedTitlesModel  = new DefaultComboBoxModel<>();
         for (Review r: ratings){
             reviewedTitlesModel.addElement(r.getMovieTitle());
 
         }
-        JComboBox<String> reviewDropdown = new JComboBox<>(reviewedTitlesModel);
+        reviewDropdown = new JComboBox<>(reviewedTitlesModel);
         reviewDropdown.setBounds(20, 270, 200, 25);
         add(reviewDropdown);
 
-        JButton deleteReviewBtn = new JButton("Delete selected review.");
+        deleteReviewBtn = new JButton("Delete selected review.");
         deleteReviewBtn.setBounds(230, 270, 150, 25);
         add(deleteReviewBtn);
         

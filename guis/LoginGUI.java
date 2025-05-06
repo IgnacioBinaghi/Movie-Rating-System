@@ -11,14 +11,14 @@ public class LoginGUI extends javax.swing.JFrame {
 
     private boolean admin;
     UserManager userManager = new UserManager();
-    private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnRegister;
-    private javax.swing.JButton btnBack;
-    private javax.swing.JLabel lblTitle;
-    private javax.swing.JLabel lblUsername;
-    private javax.swing.JLabel lblPassword;
-    private javax.swing.JTextField fieldUsername;
-    private javax.swing.JTextField fieldPassword;
+    private javax.swing.JButton loginBtn;
+    private javax.swing.JButton registerBtn;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JLabel usernameLabel;
+    private javax.swing.JLabel passwordLabel;
+    private javax.swing.JTextField usernameField;
+    private javax.swing.JTextField passwordField;
 
     public LoginGUI(boolean admin) {
         this.admin = admin;
@@ -31,27 +31,27 @@ public class LoginGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(450, 420);
         
-        lblTitle = new javax.swing.JLabel("Movie Rating System – Login / Register", javax.swing.SwingConstants.CENTER);
-        lblTitle.setFont(new java.awt.Font("Helvetica Neue", java.awt.Font.BOLD, 13));
+        titleLabel = new javax.swing.JLabel("Movie Rating System – Login / Register", javax.swing.SwingConstants.CENTER);
+        titleLabel.setFont(new java.awt.Font("Helvetica Neue", java.awt.Font.BOLD, 13));
     
-        lblUsername = new javax.swing.JLabel("Username:");
-        lblPassword = new javax.swing.JLabel("Password:");
-        fieldUsername = new javax.swing.JTextField(20);
-        fieldPassword = new javax.swing.JTextField(20);
+        usernameLabel = new javax.swing.JLabel("Username:");
+        passwordLabel = new javax.swing.JLabel("Password:");
+        usernameField = new javax.swing.JTextField(20);
+        passwordField = new javax.swing.JTextField(20);
     
-        btnLogin = new javax.swing.JButton("Login");
-        btnRegister = new javax.swing.JButton("Register");
-        btnBack = new javax.swing.JButton("Back");
+        loginBtn = new javax.swing.JButton("Login");
+        registerBtn = new javax.swing.JButton("Register");
+        backBtn = new javax.swing.JButton("Back");
 
         java.awt.Dimension btnSize = new java.awt.Dimension(120, 30);
-        btnLogin.setPreferredSize(btnSize);
-        btnRegister.setPreferredSize(btnSize);
-        btnLogin.setMaximumSize(btnSize);
-        btnRegister.setMaximumSize(btnSize);
+        loginBtn.setPreferredSize(btnSize);
+        registerBtn.setPreferredSize(btnSize);
+        loginBtn.setMaximumSize(btnSize);
+        registerBtn.setMaximumSize(btnSize);
     
-        btnLogin.addActionListener(this::btnLogin_click);
-        btnRegister.addActionListener(this::btnRegister_click);
-        btnBack.addActionListener(this::btnBack_click);
+        loginBtn.addActionListener(this::btnLogin_click);
+        registerBtn.addActionListener(this::btnRegister_click);
+        backBtn.addActionListener(this::btnBack_click);
     
         java.awt.Container pane = getContentPane();
         pane.setLayout(new java.awt.GridBagLayout());
@@ -62,7 +62,7 @@ public class LoginGUI extends javax.swing.JFrame {
         gbc.gridy = 0;
         gbc.gridwidth = 2;
         gbc.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        pane.add(lblTitle, gbc);
+        pane.add(titleLabel, gbc);
     
         gbc.gridy = 1;
         gbc.weighty = 0;
@@ -73,23 +73,23 @@ public class LoginGUI extends javax.swing.JFrame {
         gbc.gridx = 0;
         gbc.anchor = java.awt.GridBagConstraints.EAST;
         gbc.fill = java.awt.GridBagConstraints.NONE;
-        pane.add(lblUsername, gbc);
+        pane.add(usernameLabel, gbc);
     
         gbc.gridx = 1;
         gbc.anchor = java.awt.GridBagConstraints.WEST;
         gbc.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        pane.add(fieldUsername, gbc);
+        pane.add(usernameField, gbc);
     
         gbc.gridy = 3;
         gbc.gridx = 0;
         gbc.anchor = java.awt.GridBagConstraints.EAST;
         gbc.fill = java.awt.GridBagConstraints.NONE;
-        pane.add(lblPassword, gbc);
+        pane.add(passwordLabel, gbc);
     
         gbc.gridx = 1;
         gbc.anchor = java.awt.GridBagConstraints.WEST;
         gbc.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        pane.add(fieldPassword, gbc);
+        pane.add(passwordField, gbc);
 
         gbc.gridy = 4;
         gbc.gridx = 0;
@@ -97,8 +97,8 @@ public class LoginGUI extends javax.swing.JFrame {
         pane.add(javax.swing.Box.createVerticalStrut(30), gbc);
     
         JPanel buttonsPanel = new JPanel(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 0));
-        buttonsPanel.add(btnLogin);
-        buttonsPanel.add(btnRegister);
+        buttonsPanel.add(loginBtn);
+        buttonsPanel.add(registerBtn);
     
         gbc.gridy = 5;
         gbc.fill = java.awt.GridBagConstraints.NONE;
@@ -108,12 +108,12 @@ public class LoginGUI extends javax.swing.JFrame {
         gbc.gridy = 6;
         gbc.gridwidth = 2;
         gbc.anchor = java.awt.GridBagConstraints.CENTER;
-        pane.add(btnBack, gbc);
+        pane.add(backBtn, gbc);
     }
     
     private void btnRegister_click(java.awt.event.ActionEvent evt) {   
-        String username = fieldUsername.getText().trim();
-        String password = fieldPassword.getText().trim();
+        String username = usernameField.getText().trim();
+        String password = passwordField.getText().trim();
         boolean success = userManager.registerUser(username, password, this.admin);
         if (success) {
             JOptionPane.showMessageDialog(this, "Registration successful!");
@@ -133,8 +133,8 @@ public class LoginGUI extends javax.swing.JFrame {
     }                                           
 
     private void btnLogin_click(java.awt.event.ActionEvent evt) {                                         
-        String username = fieldUsername.getText().trim();
-        String password = fieldPassword.getText().trim();
+        String username = usernameField.getText().trim();
+        String password = passwordField.getText().trim();
 
         User user = userManager.authenticate(username, password);
         if (this.admin) { //attempting to log in as admin
