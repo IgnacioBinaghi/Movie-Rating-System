@@ -63,7 +63,7 @@ public class MovieManager {
         for (int i = 0; i < movies.size(); i++) {
             if (movies.get(i).getTitle().equalsIgnoreCase(title)) {
                 if (newTitle != null && !newTitle.isEmpty()) {
-                    movies.get(i).setTitle(title);
+                    movies.get(i).setTitle(newTitle);
                 }
                 if (year != null) {
                     movies.get(i).setYear(year);

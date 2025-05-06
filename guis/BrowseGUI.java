@@ -15,6 +15,11 @@ public class BrowseGUI extends JFrame{
     private DefaultListModel<String> movieListModel; // store movie titles for JList
     private JList<String> movieList; // Jlist to display the movie titles ^
 
+    private int currentPage =0;
+    private final int moviesPerPage = 20;
+    private List<Movie> allMovies;
+    private JButton prevBtn, nextBtn;
+
     // constructor -- takes username and initializes GUI
     public BrowseGUI(User user){
         this.user = user;
@@ -32,15 +37,30 @@ public class BrowseGUI extends JFrame{
         movieListModel = new DefaultListModel<>();
         movieList = new JList<>(movieListModel);
         JScrollPane scrollPane = new JScrollPane(movieList);
-        scrollPane.setBounds(20,20,440,300);
+        scrollPane.setBounds(20,20,440,280);
         add(scrollPane);
         
-        // populating the list w/ movie catalogue
-        List<Movie> movies = movieManager.getAllMovies();
-        for (Movie movie: movies){
-            movieListModel.addElement(movie.getTitle());
+        allMovies = movieManager.getAllMovies();
 
-        }
+        prevBtn = new JButton("Previous");
+        prevBtn.setBounds(100, 330, 100, 30);
+        prevBtn.addActionListener(e->{
+            if(currentPage>0){
+                currentPage--;
+                updateMovieList();
+            }
+        });
+        add(prevBtn);
+
+        nextBtn = new JButton("Next");
+        nextBtn.setBounds(300, 330, 100, 30);
+        nextBtn.addActionListener(e->{
+            if ((currentPage +1)*moviesPerPage<allMovies.size()){
+                currentPage++;
+                updateMovieList();
+            }
+        });
+        add(nextBtn);
 
         // user double clicks on a movie to open MovieDetailGUI
         movieList.addMouseListener(new MouseAdapter() {
@@ -53,5 +73,21 @@ public class BrowseGUI extends JFrame{
                 }
             }
         });
+
+        updateMovieList();
     }
+
+    private void updateMovieList(){
+        movieListModel.clear();
+        int start = currentPage*moviesPerPage;
+        int end=Math.min(start+moviesPerPage, allMovies.size());
+        for (int i=start; i<end; i++){
+            movieListModel.addElement(allMovies.get(i).getTitle());
+        }
+
+        prevBtn.setEnabled(currentPage>0);
+        int totalPages = (int)Math.ceil((double) allMovies.size()/moviesPerPage);
+        nextBtn.setEnabled(currentPage<totalPages-1);
+    }
+
 }
