@@ -88,6 +88,21 @@ public class MovieDetailGUI extends JFrame {
         btnSubmit.addActionListener(e -> btnSubmit_click()); 
         add(btnSubmit);
 
+        // if review already exists, then show option to delete current review
+        boolean hasReview = false;
+        for (Review review: reviewManager.getUserReviews(user.getUsername())){
+            if (review.getMovieTitle().equalsIgnoreCase(movie.getTitle())){
+                hasReview = true;
+                break;
+            }
+        }
+        if (hasReview){
+            JButton btnDeleteReview = new JButton("Delete Current Review");
+            btnDeleteReview.setBounds(30,480,200,30);
+            btnDeleteReview.addActionListener(e->deleteReview());
+            add(btnDeleteReview);
+        }
+
         btnAddToWatchlist = new JButton("Add to Watchlist");
         btnAddToWatchlist.setBounds(160, 400, 150, 30);
         btnAddToWatchlist.addActionListener(e -> btnAddToWatchlist_Click());
@@ -99,7 +114,7 @@ public class MovieDetailGUI extends JFrame {
         add(btnRemoveFromWatchList);
 
         btnBack = new JButton("Back");
-        btnBack.setBounds(175, 440, 100, 30);
+        btnBack.setBounds(250, 480, 100, 30);
         btnBack.addActionListener(e -> btnBack_click(user.isAdmin()));
         add(btnBack);
         //already added
@@ -127,11 +142,28 @@ public class MovieDetailGUI extends JFrame {
         }
         boolean success = reviewManager.addReview(user.getUsername(), movie.getTitle(), rating, note);
         if (success) {
-            JOptionPane.showMessageDialog(this, "Review submitted sucessfully!");
+            JOptionPane.showMessageDialog(this, "Review submitted successfully!");
             double avg = reviewManager.getAverageRating(movie.getTitle());
             lblAvgRating.setText("Average Rating: " + String.format("%.2f", avg));
+
+            dispose(); // refresh page
+            new MovieDetailGUI(user, movie.getTitle()).setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Failed to submit review.");
+        }
+    }
+
+    private void deleteReview(){
+        int confirm = JOptionPane.showConfirmDialog(this, "Delete review?","Confirm", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION){
+            boolean deleted = reviewManager.deleteReview(user.getUsername(), movie.getTitle());
+            if (deleted){
+                JOptionPane.showMessageDialog(this, "Review has been deleted.");
+                dispose();
+                new MovieDetailGUI(user, movie.getTitle()).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Failed to delete review.");
+            }
         }
     }
     private void btnBack_click(boolean isAdmin) {
